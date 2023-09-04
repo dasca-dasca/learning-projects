@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIC-TAC-TOE</title>
+    <link rel="stylesheet" href="/styles/general.css">
+    <link rel="stylesheet" href="/styles/menu.css">
+    <link rel="stylesheet" href="/styles/game.css">
+</head>
+<body>
+    
+    <div class="main-div">
+        <div class="title">
+            <p class="title-p">
+                TIC TAC TOE
+            </p>
+        </div>
+        <!-- -->
+        <!-- to unhide the div below to show menu -->
+        <div class="player-names"> 
+            <p class="player-name-p">
+                Player one - X
+            </p>
+            <input class="input-name-1" type="text" placeholder="Enter your name">
+            <p class="player-name-p">
+                Player two - O
+            </p>
+            <input class="input-name-2" type="text" placeholder="Enter your name">
+            <button class="submit-btn">Submit</button>
+            <p class="error-names"></p>
+        </div>
+
+        <!-- Game -->
+        <div class="game hide">
+            <div class="player-1">Andrei's turn</div>
+            <div class="display-game">
+                <div class="square0 square"></div>
+                <div class="square1 square"></div>
+                <div class="square2 square"></div>
+                <div class="square3 square"></div>
+                <div class="square4 square"></div>
+                <div class="square5 square"></div>
+                <div class="square6 square"></div>
+                <div class="square7 square"></div>
+                <div class="square8 square"></div>
+            </div>
+            <div class="player-2 hide">Ion's turn</div>
+        </div>
+        <div class="buttons hide">
+            <button class="reset-btn">
+                Reset Game
+            </button>
+            <button class="main-menu-btn">
+                Main Menu
+            </button>
+        </div>
+    </div>
+
+    <script src="/scripts/menu.js"></script>
+    <script src="/scripts/game.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+.main-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+.title{
+    font-size: 45px;
+    font-weight: 1000px;
+    margin: 40px 0px;
+    color: #EAF0CE;
+}
+.player-names{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player-name-p{
+    color: #EAF0CE;
+    font-weight: bolder;
+    margin-top: 30px;
+    font-size: 22px;
+}
+.input-name-1,
+.input-name-2{
+    background-color: #EAF0CE;
+    color: #7D8491;
+    padding: 7px 10px;
+    font-size: 22px;
+    width: 180px;
+    border: 2px solid #574B60;
+    margin-top: 5px;
+    font-weight: bold;
+    color: #104547;
+    border-radius: 5px;
+}
+.input-name-1::placeholder,
+.input-name-2::placeholder{
+    text-align: center;
+}
+.submit-btn{
+    margin-top: 20px;
+    width: 150px;
+    font-size: 22px;
+    padding: 5px 0px;
+    border: 2px solid #574B60;
+    color: black;
+    font-weight: bold;
+    background-color: #EAF0CE;
+    cursor: pointer;
+    transition: background-color 0.20s, color 0.20s;
+    border-radius: 5px;
+}
+.submit-btn:hover{
+    background-color: #574B60;
+    color: #EAF0CE;
+}
+.error-names{
+    font-size: 20px;
+    color: #B80C09;
+    font-weight: bold;
+    margin-top: 10px;
+
+}
+.hide{
+    display: none;
+}
+/* .show{
+    display: flex;
+} */

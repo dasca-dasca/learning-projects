@@ -1,0 +1,76 @@
+.display-game{
+    display: flex;
+    flex-wrap: wrap;
+    width: 475px;
+    height: 469px;
+}
+.square{
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    color: #EAF0CE;
+}
+.square0{
+    border: 5px solid #633a83;
+}
+.square1,
+.square2{
+    border-top: 5px solid #633a83;
+    border-bottom: 5px solid #633a83;
+    border-right: 5px solid #633a83;
+}
+.square3,
+.square6{
+    border-left: 5px solid #633a83;
+    border-bottom: 5px solid #633a83;
+    border-right: 5px solid #633a83;
+}
+.square4,
+.square5,
+.square7,
+.square8{
+    border-bottom: 5px solid #633a83;
+    border-right: 5px solid #633a83;
+}
+
+.reset-btn,
+.main-menu-btn{
+    margin-top: 20px;
+    width: 150px;
+    font-size: 22px;
+    padding: 5px 0px;
+    border: 2px solid #574B60;
+    color: black;
+    font-weight: bold;
+    background-color: #EAF0CE;
+    cursor: pointer;
+    transition: background-color 0.20s, color 0.20s;
+    border-radius: 5px;
+}
+.reset-btn:hover,
+.main-menu-btn:hover{
+    background-color: #574B60;
+    color: #EAF0CE;
+}
+.buttons{
+    justify-content: space-around;
+}
+
+/* .player-1,
+.player-2{
+    font-size: 39px;
+    width: 300px;
+    text-align: center;
+    color: #EAF0CE;
+    position: absolute;
+}
+.player-1{
+    left: -300px;
+}
+.player-2{
+    right: -300px;
+} */
