@@ -60,7 +60,11 @@
     justify-content: space-around;
 }
 
-/* .player-1,
+.highlight{
+    background-color: red;
+}
+
+.player-1,
 .player-2{
     font-size: 39px;
     width: 300px;
@@ -70,7 +74,12 @@
 }
 .player-1{
     left: -300px;
+    color: #cef0ed;
 }
 .player-2{
     right: -300px;
-} */
+    color: #ced9f0;
+}
+.game{
+    position: relative;
+}

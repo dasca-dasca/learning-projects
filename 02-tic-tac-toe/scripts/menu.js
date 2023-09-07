@@ -41,5 +41,8 @@ function submitPlayerNames(){
         divMenu.classList.add('hide');
         divGame.classList.remove('hide');
         divButtons.classList.remove('hide');
+
+        player1div.innerText = `${player1}'s turn.`;
+        player2div.innerText = `${player2}'s turn.`;
     }
 };
