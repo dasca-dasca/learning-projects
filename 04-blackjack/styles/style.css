@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 html, body {
     height: 100%;
     margin: 0;
@@ -6,42 +9,123 @@ html, body {
 
 body {
     background-color: #f0f0f0; /* Set a background color for the body */
-    font-family: Arial, sans-serif; /* Specify a font-family */
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Specify a font-family */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-#controls{
+.card{
+    height: 25vh;
     position: absolute;
-    bottom: 0;
-    right: 0;
+}
+
+.has {
+    width: 100px;
+}
+
+.current-hand{
+    position: absolute;
+    right: 55px;
+    bottom: -10px;
+    color: green;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.modal-balance{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: red;
+    font-size: 21px;
+    padding: 8px;
+}
+
+/* CONTROLS */
+.btn{
+    color: white;
+    border: none;
+    font-weight: bold;
+    padding: 5px;
+    cursor: pointer;
+}
+#hit-btn{
+    background-color: green;
+}
+#double-btn{
+    background-color: orange;
+}
+#split-btn{
+    background-color: blue;
+}
+#stay-btn{
+    background-color: red;
+}
+
+
+/* COMPUTER */
+#computer{
+    display: flex;
+    justify-content: center;
+}
+#computer-cards-div{
+    width: 50px;
+    height: 50px;
+    border: 2px solid black;
+    position: relative;
+    margin-top: 30px;
+}
+
+
+
+/* HUMAN */
+#human{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+#human-cards{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: end;
+    flex: 80%;
+}
+
+
+.human-cards-div{
+    border: 2px solid black;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.controls{
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
 }
 
-.card{
-    height: 130px;
-    position: absolute;
+
+/* WIN OR LOSE */
+.lose {
+    color: red;
+    font-weight: bold;
+}
+.win{
+    color: green;
+    font-weight: bold;
+}
+.push{
+    color: orange;
+    font-weight: bold;
 }
 
-.dealer-card{
+/* DISABLE ELEMENTS */
+.disabled{
+    display: none;
 }
 
-#dealer-cards-div{
-    width: 50px;
-    height: 50px;
-    border: 2px solid black;
-    position: relative;
-    margin-top: 10px;
-    left: 50%;
-}
-
-#player-cards-div{
-    position: relative;
-    border: 2px solid black;
-    left: 50%;
-    width: 50px;
-    height: 50px;
-}

@@ -9,24 +9,43 @@
     <script type="module" src="/scripts/app.js" defer></script>
 </head>
 <body>
-    <div id="dealer-cards-div">
-        <p id="dealer-has" class="has"></p>
+    <div id="computer">
+        <div id="computer-cards-div">
+            <p id="computer-has" class="has"></p>
+        </div>
     </div>
 
-    <div id="player-cards-div">
-        <p id="player-has" class="has"></p>
+    <div id="human">
+        <div id="human-cards">
+            <div id="human-1" class="human-cards-div">
+                <p class="has"></p>
+            </div>
+            <div id="human-2" class="human-cards-div disabled">
+                <p class="has"></p>
+            </div>
+            <div id="human-3" class="human-cards-div disabled">
+                <p class="has"></p>
+            </div>
+            <div id="human-4" class="human-cards-div disabled">
+                <p class="has"></p>
+            </div>
+        </div>
+
+        <div class="controls">
+            <p id="balance">$200</p>
+            <p>Betting</p>
+            <button id="bet-btn" class="btn">Bet</button>
+            <input type="number" min=10 max=500 id="bet-amount">
+            <p>Playing</p>
+            <button id="double-btn" class="btn">x2</button>
+            <button id="hit-btn" class="btn">+</button>
+            <button id="stay-btn" class="btn">X</button>
+            <button id="split-btn" class="btn">| |</button>
+        </div>
+
+        
     </div>
 
-    <div id="controls">
-        <p id="balance">$200</p>
-        <p>Betting</p>
-        <button id="bet-btn">Bet</button>
-        <input type="number" min=10 max=500 id="bet-amount">
-        <p>Playing</p>
-        <button id="hit-btn">Hit</button>
-        <button id="double-btn">Double</button>
-        <button id="split-btn">Split</button>
-        <button id="stay-btn">Stay</button>
-    </div>
+    
 </body>
 </html>

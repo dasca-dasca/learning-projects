@@ -1,9 +1,10 @@
 class Card {
-    constructor(value, type, amount, path) {
+    constructor(value, type, amount, path, id) {
         this.value = value;
         this.type = type;
         this.amount = amount;
         this.path = path;
+        this.id = id;
     }
 }
 
@@ -47,7 +48,7 @@ export class Deck {
                     amount = Number.parseInt(value);
                 }
 
-                this.cards.push(new Card(value, type, amount, path));
+                this.cards.push(new Card(value, type, amount, path, picture));
 
                 picture += 1;
             }
