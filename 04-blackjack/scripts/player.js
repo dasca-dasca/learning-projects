@@ -1,5 +1,3 @@
-import { Game } from './app.js';
-
 class Player {
     constructor() {
         this.cards = [];
@@ -26,13 +24,6 @@ class Player {
         }
         return total;
     }
-
-    clone() {
-        const clone = new Player();
-        clone.cards = this.cards.slice(); // Shallow copy of the cards array
-        clone.amount = this.amount;
-        return clone;
-    }
 }
 
 export class Human extends Player {
@@ -53,27 +44,29 @@ export class Human extends Player {
             return;
         }
         this.showCurrentHand();
-        this.human.balance -= amount;
-        Game.updateBalance(this.human.balance);
         this.deal();
+
+        //Check blackjack
+        if (this.human.cards[0].amount === this.human.cards[1].amount){
+            this.manageButtons([0, 1, 1, 1, 1]);
+        }else{
+            this.manageButtons([0, 1, 1, 1, 0]);
+        }
+        this.checkForBlackjack(this.human, this.computer);
     }
 
     hit() {
-        this.manageButtons([0, 1, 0, 0, 1]);
+        this.manageButtons([0, 0, 1, 1, 0]);
         this.human.amount = this.human.calculateTotal();
         if (this.human.amount > 21) {
             this.lose();
         }
     }
     double() {
-        if (this.checkAvailableBalance() === false) {
-            return;
-        }
-
         this.human.currentBet *= 2;
 
         this.human.amount = this.human.calculateTotal();
-        this.manageButtons([1, 0, 0, 0, 0]);
+        this.manageButtons([0, 1, 1, 1, 1]);
 
         if (this.human.amount > 21) {
             this.lose();
@@ -86,6 +79,8 @@ export class Human extends Player {
         if (this.checkAvailableBalance() === false) {
             return;
         }
+
+        this.manageButtons([0, 1, 1, 1, 0])
 
         //Setup previous and next human
         const newHuman = this.human.clone();
@@ -137,6 +132,12 @@ export class Computer extends Player {
             this.showCurrentHand();
 
             this.showHumanCard(this.human.draw(this.deck), this.human);
+
+            if (this.human.cards[0].amount === this.human.cards[1].amount){
+                this.manageButtons([0, 1, 1, 1, 1]);
+            }else{
+                this.manageButtons([0, 1, 1, 1, 0]);
+            }
             return;
         }
         //Remove face down card

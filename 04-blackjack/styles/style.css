@@ -1,3 +1,4 @@
+/* GENERAL */
 *{
     box-sizing: border-box;
 }
@@ -5,13 +6,14 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    color: white;
 }
 
 body {
-    background-color: #f0f0f0; /* Set a background color for the body */
-    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Specify a font-family */
+    background-image: url('/images/felt-background.jpg'); 
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
 }
 
@@ -44,6 +46,70 @@ body {
     padding: 8px;
 }
 
+/* PLAYERS */
+#players{
+    flex: 75%;
+}
+/* ******************************* */
+/* NEW CONTROLS */
+/* ******************************* */
+#bets-and-balance{
+    border: 2px solid white;
+    display: flex;
+    flex: 25%;
+    flex-direction: column;
+}
+#bets{
+    border: 2px solid red;
+    flex: 40%;
+}
+
+
+/* CHIPS */
+.chip{
+    position: absolute;
+    width: 28%;
+    cursor: pointer;
+    transition: top 0.45s ease-in-out, left 0.45s ease-in-out;
+}
+#chip-10{
+    left: 10%;
+    top: 25%;
+}
+#chip-25{
+    left: 20%;
+    top: 40%;
+}
+#chip-100{
+    left: 40%;
+    top: 50%;
+}
+#chip-10.clicked{
+    left: 34%;
+    top: -50%;
+}
+#chip-25.clicked{
+    left: 36%;
+    top: -51%;
+}
+#chip-100.clicked{
+    left: 35%;
+    top: -49%;
+}
+
+#balance-div{
+    flex: 60%;
+    border: 2px solid blue;
+    position: relative;
+}
+#balance{
+    position: absolute;
+    left: 72%;
+    bottom: 26%;
+    font-size: 2vw;
+    font-weight: bold;
+}
+
 /* CONTROLS */
 .btn{
     color: white;
@@ -51,6 +117,9 @@ body {
     font-weight: bold;
     padding: 5px;
     cursor: pointer;
+}
+#bet-btn{
+    background-color: black;
 }
 #hit-btn{
     background-color: green;
@@ -63,6 +132,12 @@ body {
 }
 #stay-btn{
     background-color: red;
+}
+.btn-disabled{
+    opacity: 0.5; 
+    cursor: not-allowed; 
+    background-color: #ccc;
+    color: #666; 
 }
 
 
@@ -110,7 +185,7 @@ body {
 }
 
 
-/* WIN OR LOSE */
+/* WIN, LOSE, PUSH */
 .lose {
     color: red;
     font-weight: bold;

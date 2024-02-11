@@ -9,11 +9,15 @@ export class Game {
         this.computer = new Computer();
         this.setupEvents(this.human);
     }
+
+    static updateBalance(amount) {
+        document.getElementById('balance').textContent = `$${amount}`;
+    }
+
     ////////////////////////////////////////////////////////////////////
     //EVENTS
     ////////////////////////////////////////////////////////////////////
     currentEventHandlers = {};
-
     newEventHandlers = {
         betBtn: this.betBtnHandler,
         hitBtn: this.hitBtnHandler,
@@ -54,39 +58,33 @@ export class Game {
     betBtnHandler(human) {
         human.bet.call(this);
     }
-
     hitBtnHandler(human) {
         this.showHumanCard(human.draw(this.deck), human);
         human.hit.call(this);
     }
-
     doubleBtnHandler(human) {
+        if (this.checkAvailableBalance() === false) {
+            return;
+        }
         this.showHumanCard(human.draw(this.deck), human);
         human.double.call(this);
     }
-
     splitBtnHandler() {
         this.human.split.call(this);
     }
-
     stayBtnHandler() {
         this.computer.stay.call(this);
     }
-
     ////////////////////////////////////////////////////////////////////
     //BUTTONS
     ////////////////////////////////////////////////////////////////////
     buttons = {
         betBtn: document.getElementById('bet-btn'),
-        hitBtn: document.getElementById('hit-btn'),
         doubleBtn: document.getElementById('double-btn'),
-        splitBtn: document.getElementById('split-btn'),
+        hitBtn: document.getElementById('hit-btn'),
         stayBtn: document.getElementById('stay-btn'),
+        splitBtn: document.getElementById('split-btn'),
     };
-
-    static updateBalance(amount) {
-        document.getElementById('balance').textContent = `$${amount}`;
-    }
 
     deal() {
         //Deal initial cards
@@ -94,13 +92,6 @@ export class Game {
         this.showComputerCard(this.computer.draw(this.deck));
         this.showHumanCard(this.human.draw(this.deck), this.human);
         this.showComputerCard(this.computer.draw(this.deck), false); // Don't show the second dealer card.
-
-        //Disable bet btn
-        this.manageButtons([0, 1, 1, 1, 1]);
-
-        this.checkForBlackjack(this.human, this.computer);
-
-        // this.checkForBlackjack();
     }
     showComputerCard(card, show = true) {
         const newImg = document.createElement('img');
@@ -215,7 +206,6 @@ export class Game {
         //The array should contain 1-5 binary digits
         //Each 1 represents a button on
         //Each 0 represents a button off
-        return;
         if (binaryArray.length !== 5) {
             console.error(
                 'Invalid binary array. It must have exactly 5 elements.'
@@ -227,6 +217,11 @@ export class Game {
             const button = this.buttons[buttonKey];
             const isEnabled = binaryArray[index] === 1;
             button.disabled = !isEnabled;
+            if (isEnabled){
+                button.classList.remove('btn-disabled')
+            }else if(!isEnabled){
+                button.classList.add('btn-disabled')
+            }            
         });
     }
 
