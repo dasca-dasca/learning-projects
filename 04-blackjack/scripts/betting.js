@@ -1,3 +1,5 @@
+export { bet, balance }
+
 const chip10 = document.getElementById('chip-10');
 const chip25 = document.getElementById('chip-25');
 const chip100 = document.getElementById('chip-100');
@@ -8,7 +10,7 @@ const balanceDisplay = document.getElementById('balance');
 const betAmountDisplay = document.getElementById('bet-amount');
 
 let zIndexCounter = 1;
-let balance = 300;
+let balance = 2500;
 let bet = 0;
 
 chip10.addEventListener('click', moveChip);
@@ -91,5 +93,3 @@ function addChipsToBalance() {
         }
     }
 }
-
-

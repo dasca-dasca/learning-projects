@@ -19,7 +19,8 @@
             <img src="/images/white-chip.png" alt="$10 chip" class="chip" id="chip-10" data-value="10">
             <img src="/images/blue-chip.png" alt="$25 chip" class="chip" id="chip-25" data-value="25">
             <img src="/images/red-chip.png" alt="$100 chip" class="chip" id="chip-100" data-value="100">
-            <p id="balance">$2,500</p>
+            <p id="balance">$2500</p>
+            <button id="bet-btn" class="btn">Deal</button>
         </div>
     </div>
 
@@ -30,29 +31,22 @@
             </div>
         </div>
         <div id="human">
-            <div id="human-cards">
-                <div id="human-1" class="human-cards-div">
-                    <p class="has"></p>
-                </div>
-                <div id="human-2" class="human-cards-div disabled">
-                    <p class="has"></p>
-                </div>
-                <div id="human-3" class="human-cards-div disabled">
-                    <p class="has"></p>
-                </div>
-                <div id="human-4" class="human-cards-div disabled">
-                    <p class="has"></p>
-                </div>
+            <div id="human-1" class="human-cards-div">
+                <p class="has"></p>
+            </div>
+            <div id="human-2" class="human-cards-div disabled">
+                <p class="has"></p>
+            </div>
+            <div id="human-3" class="human-cards-div disabled">
+                <p class="has"></p>
+            </div>
+            <div id="human-4" class="human-cards-div disabled">
+                <p class="has"></p>
             </div>
         </div>
     </div>
 
-    <div class="controls disabled">
-        <p id="balance">$200</p>
-        <p>Betting</p>
-        <button id="bet-btn" class="btn">Bet</button>
-        <input type="number" min=10 max=500 id="bet-amount">
-        <p>Playing</p>
+    <div class="controls">
         <button id="double-btn" class="btn">x2</button>
         <button id="hit-btn" class="btn">+</button>
         <button id="stay-btn" class="btn">x</button>

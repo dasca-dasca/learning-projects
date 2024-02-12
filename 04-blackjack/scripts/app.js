@@ -1,10 +1,11 @@
 import { Human, Computer } from './player.js';
 import { Deck } from './card-and-deck.js';
+import { balance } from './betting.js';
 
 export class Game {
     constructor() {
         this.deck = new Deck();
-        this.human = new Human(200);
+        this.human = new Human(balance);
         this.humans = [this.human];
         this.computer = new Computer();
         this.setupEvents(this.human);
@@ -130,9 +131,9 @@ export class Game {
         resultCount.style.position = 'absolute';
 
         if (player === this.computer) {
-            resultCount.style.top = '-40px';
+            resultCount.style.top = '-70px';
         } else {
-            resultCount.style.bottom = '-40px';
+            resultCount.style.bottom = '-70px';
         }
 
         if (hide === true) {
@@ -283,4 +284,4 @@ export class Game {
     }
 }
 
-const game = new Game();
+export const game = new Game();

@@ -1,3 +1,7 @@
+import { bet } from './betting.js';
+import { balance as currentBalance } from './betting.js';
+
+
 class Player {
     constructor() {
         this.cards = [];
@@ -36,10 +40,7 @@ export class Human extends Player {
 
     bet() {
         this.resetRound();
-        const amount = Number.parseInt(
-            document.getElementById('bet-amount').value
-        );
-        this.human.currentBet = amount;
+        this.human.currentBet = bet;
         if (this.checkAvailableBalance() === false) {
             return;
         }
@@ -47,9 +48,9 @@ export class Human extends Player {
         this.deal();
 
         //Check blackjack
-        if (this.human.cards[0].amount === this.human.cards[1].amount){
+        if (this.human.cards[0].amount === this.human.cards[1].amount) {
             this.manageButtons([0, 1, 1, 1, 1]);
-        }else{
+        } else {
             this.manageButtons([0, 1, 1, 1, 0]);
         }
         this.checkForBlackjack(this.human, this.computer);
@@ -80,7 +81,7 @@ export class Human extends Player {
             return;
         }
 
-        this.manageButtons([0, 1, 1, 1, 0])
+        this.manageButtons([0, 1, 1, 1, 0]);
 
         //Setup previous and next human
         const newHuman = this.human.clone();
@@ -133,9 +134,9 @@ export class Computer extends Player {
 
             this.showHumanCard(this.human.draw(this.deck), this.human);
 
-            if (this.human.cards[0].amount === this.human.cards[1].amount){
+            if (this.human.cards[0].amount === this.human.cards[1].amount) {
                 this.manageButtons([0, 1, 1, 1, 1]);
-            }else{
+            } else {
                 this.manageButtons([0, 1, 1, 1, 0]);
             }
             return;
