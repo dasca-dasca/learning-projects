@@ -10,7 +10,7 @@ html, body {
 }
 
 body {
-    background-image: url('images/felt-background.jpg'); 
+    background-image: url('../images/felt-background.jpg'); 
     font-family: Verdana, Geneva, Tahoma, sans-serif; 
     display: flex;
     flex-direction: row;
