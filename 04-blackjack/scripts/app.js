@@ -109,7 +109,7 @@ export class Game {
             this.showAmount(position, this.computer);
         } else if (!show) {
             // AT START, ONLY SHOW THE AMOUNT FOR THE FIRST CARD
-            newImg.src = `/images/card-back.png`;
+            newImg.src = `images/card-back.png`;
             newImg.classList.add('face-down-card');
             this.showAmount(position, this.computer, true);
         }
