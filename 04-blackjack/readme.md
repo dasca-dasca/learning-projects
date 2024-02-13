@@ -12,9 +12,9 @@ Welcome to Classic Blackjack.
 
 # Player Actions
 
-• The player can "Hit (+)" to receive additional cards or "Stand" (x) to keep his current hand.  
-• "Double Down" (x2) allows the player to double their bet and receive only one additional card.  
-• "Split" (||) is available when the first two cards are of the same rank, allowing the player to play up to four hands simultaneously.  
+• The player can "Hit (+)" to receive additional cards or "Stand (x)" to keep his current hand.  
+• "Double Down (x2)" allows the player to double their bet and receive only one additional card.  
+• "Split (||)"  is available when the first two cards are of the same rank, allowing the player to play up to four hands simultaneously.  
 
 ![](images/showcase/2.png)
 
