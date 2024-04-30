@@ -17,8 +17,16 @@ export function TodoItem({ name, id, completed }) {
       {isEdited ? (
         <>
           <form className="editing-form" onSubmit={handleSubmit}>
-            <input autoFocus className="text-input list-item-input" type="text" ref={updateRef} defaultValue={name} />
-            <button className="btn btn-save">Save</button>
+            <input
+              autoFocus
+              className="text-input list-item-input"
+              type="text"
+              ref={updateRef}
+              defaultValue={name}
+            />
+            <button className="btn btn-save">
+              <i class="fa-regular fa-floppy-disk"></i>
+            </button>
           </form>
         </>
       ) : (
@@ -37,10 +45,10 @@ export function TodoItem({ name, id, completed }) {
           </div>
           <div>
             <button className="btn btn-edit" onClick={() => setIsEdited(true)}>
-              Edit
+              <i className="fa-solid fa-pen"></i>
             </button>
             <button className="btn btn-delete" onClick={() => deleteTodo(id)}>
-              Delete
+              <i class="fa-solid fa-trash"></i>
             </button>
           </div>
         </>

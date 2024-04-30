@@ -19,7 +19,7 @@ export function NewTodoForm() {
         <input className='text-input' autoFocus type="text" ref={nameRef} />
       </div>
       <div className="adding-todo-right">
-        <button className="btn btn-add">Add Todo</button>
+        <button className="btn btn-add"><i class="fa-solid fa-square-plus"></i></button>
       </div>
     </form>
   )
